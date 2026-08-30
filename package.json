@@ -2,6 +2,7 @@
   "name": "popcorn-pager",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "Buy a cinema ticket, and your phone tells you when to take a break and whether to stay for the credits.",
   "type": "module",
   "scripts": {
