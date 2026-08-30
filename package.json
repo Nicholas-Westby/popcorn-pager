@@ -1,0 +1,27 @@
+{
+  "name": "popcorn-pager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Buy a cinema ticket, and your phone tells you when to take a break and whether to stay for the credits.",
+  "type": "module",
+  "scripts": {
+    "deploy": "node deploy.ts",
+    "reset": "node reset.ts",
+    "dev": "wrangler dev",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.deploy.json",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.22.0",
+    "@cloudflare/workers-types": "^5.20260828.1",
+    "@types/node": "^26.4.0",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.0",
+    "wrangler": "^4.127.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

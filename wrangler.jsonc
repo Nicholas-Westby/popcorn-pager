@@ -1,0 +1,39 @@
+// Nothing in this file is specific to one Cloudflare account, so it is
+// committed as-is. `npm run deploy` fills in the rest: the D1 database is
+// resolved or created by name on deploy, and everything else that differs
+// between deployments (the auth token, the VAPID keypair) is a secret.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "popcorn-pager",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-19",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  // A per-version preview URL would be a second origin, and a service worker
+  // and its push subscriptions belong to one origin, so keep there being one.
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": true }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      // No database_id. Wrangler resolves this name on deploy and creates the
+      // database if it does not exist yet, which keeps the id out of git.
+      "database_name": "popcorn-pager",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Reads the booking out of the email. The free daily allowance covers
+  // hundreds of emails, so this costs nothing in practice.
+  "ai": { "binding": "AI" },
+  "vars": {
+    // How long a notification is kept before the cleanup cron deletes it.
+    "NOTIFICATION_TTL_HOURS": "720"
+  },
+  "triggers": {
+    // Hourly cleanup of expired notifications.
+    "crons": ["17 * * * *"]
+  }
+}

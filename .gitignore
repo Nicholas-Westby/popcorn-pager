@@ -1,0 +1,13 @@
+node_modules/
+.wrangler/
+dist/
+*.log
+.DS_Store
+.idea
+
+# Everything `npm run deploy` generated for one Cloudflare account: the auth
+# token and the VAPID keypair. Keep a copy; losing the keypair means every
+# phone has to enable notifications again.
+.secrets.json
+.dev.vars
+.dev.vars.*
