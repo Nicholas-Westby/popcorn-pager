@@ -4,6 +4,8 @@ Forward a cinema ticket confirmation to an address of your own, and a minute
 later your phone tells you the best moment to step out and whether there is
 anything after the credits.
 
+![Popcorn Pager Notification About Terminator Movie](assets/popcorn-pager.png)
+
 ```
 🍿 Dune: Part Three · 7:30 PM
 🚽 Best break: 70 minutes in, when the snow appears
