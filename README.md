@@ -49,10 +49,10 @@ phone has to be told to allow notifications again after the next deploy.
 
 ## More
 
-| | |
-| --- | --- |
-| [How it works](docs/how-it-works.md) | The pipeline, the models, and why the notification reads the way it does |
-| [Reference](docs/reference.md) | Configuration, routes, and development |
-| [Troubleshooting](docs/troubleshooting.md) | When notifications stop arriving |
+|                                            |                                                                          |
+|--------------------------------------------|--------------------------------------------------------------------------|
+| [How it works](docs/how-it-works.md)       | The pipeline, the models, and why the notification reads the way it does |
+| [Reference](docs/reference.md)             | Configuration, routes, and development                                   |
+| [Troubleshooting](docs/troubleshooting.md) | When notifications stop arriving                                         |
 
 Licensed under the [MIT License](LICENSE).
